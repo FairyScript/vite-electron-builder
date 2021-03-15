@@ -1,6 +1,7 @@
 const {join} = require('path');
-const vue = require('@vitejs/plugin-vue');
 const {chrome} = require('./electron-vendors');
+import reactRefresh from '@vitejs/plugin-react-refresh';
+
 /**
  * @type {import('vite').UserConfig}
  * @see https://vitejs.dev/config/
@@ -12,7 +13,7 @@ module.exports = {
       '/@/': join(process.cwd(), './src/renderer') + '/',
     },
   },
-  plugins: [vue()],
+  plugins: [reactRefresh()],
   base: '',
   build: {
     sourcemap: 'inline',

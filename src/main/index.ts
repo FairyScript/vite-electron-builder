@@ -27,9 +27,9 @@ if (!gotTheLock) {
     app.whenReady()
       .then(() => import('electron-devtools-installer'))
       .then(({default: installExtension}) => {
-        /** @see https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg */
-        const VUE_DEVTOOLS_BETA = 'ljjemllljcmogpfapbkkighbhhppjdbg';
-        return installExtension(VUE_DEVTOOLS_BETA);
+        /** @see https://chrome.google.com/webstore/detail/fmkadmapgofadopljbjfkapdkoienihi */
+        const REACT_DEVTOOLS = 'fmkadmapgofadopljbjfkapdkoienihi';
+        return installExtension(REACT_DEVTOOLS);
       })
       .catch(e => console.error('Failed install extension:', e));
   }
@@ -55,6 +55,7 @@ if (!gotTheLock) {
       ? env.VITE_DEV_SERVER_URL
       : new URL('renderer/index.html', 'file://' + __dirname).toString();
 
+    //@ts-ignore
     await mainWindow.loadURL(pageUrl);
     mainWindow.maximize();
     mainWindow.show();

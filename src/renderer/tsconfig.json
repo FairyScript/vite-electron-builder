@@ -1,19 +1,28 @@
 {
-  "extends": "../../config/tsconfig-base.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "/@/*": [
-        "./*"
-      ]
-    },
+    "target": "ESNext",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "types": [
-      "../../types/env",
-      "vite/client",
-      "./types/shims-vue"
-    ]
+      "vite/client"
+    ],
+    "allowJs": false,
+    "skipLibCheck": false,
+    "esModuleInterop": false,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
   },
-  "files": [
-    "./index.ts"
+  "include": [
+    "."
   ]
 }
